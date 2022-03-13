@@ -15,11 +15,18 @@ header {
   background-size: cover;
 }
 
+.img {
+  border-radius: 25px;
+  border-color: #669DDA;
+  border-width: 5px;
+  border-style: solid;
+}
+
 header h1 {
   margin: 40px;
   color: #669DDA;
   font-family: ravie, sans-serif;
-  font-size: 40px;
+  font-size: 60px;
   text-shadow: 10px 0 5px rgba(0, 0, 0, 0.75);
 }
 
@@ -57,9 +64,20 @@ header nav ul li {
   flex-direction: column;
 }
 
+.about-head {
+  color: #669DDA;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  font-style: italic;
+  text-shadow: 3px 0 2px white;
+
+}
+
 .about-me {
   display: flex;
   justify-content: center;
+  
 }
 
 .img {
@@ -74,4 +92,5 @@ header nav ul li {
   font-style: italic;
   text-align: center;
   display: flex;
+  text-shadow: 1px 0 1px white;
 }

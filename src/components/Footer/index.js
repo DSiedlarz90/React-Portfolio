@@ -1,6 +1,6 @@
 function Footer() {
     return(
-        <section class='footer'>
+        <section className='footer'>
             <h2>Contact Me</h2>
             <p>Testing testing testicles</p>
         </section>

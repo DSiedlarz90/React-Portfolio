@@ -1,8 +1,9 @@
-import portrait from '../images/me.jpg';
+import portrait from '../../images/me.jpg';
+
 function About() {
     return(
         <section className='about'>
-            <h2 className='about-header'>About Me</h2>
+            <h2 className='about-head'>About Me</h2>
             <div className='about-me'>
                 <img className='img' alt='David adjusting a sound board before a show' src={portrait} />
             </div>
@@ -13,8 +14,8 @@ function About() {
                     Journey and I cannot wait to get started in my new career!<br></br>
                     <br></br>
                     Enough with the qualifications. A little about me. I play music, love some good gaming time,
-                    and absolutely love my eight, yes you read right, eight animals. I live in Wilmington, NC.
-                    Moved here for the beach. Play disc golf whenever the weather allows, and used to have a 227 bowling average.
+                    and absolutely love my eight, yes you read right, eight animals. I live in Wilmington, NC,
+                    moved here for the beach. Play disc golf whenever the weather allows, and used to have a 227 bowling average.
                     <br></br>
                     <br></br>
                     Please have a look around and I hope you like what you see! Thank you! 
