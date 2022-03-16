@@ -52,8 +52,9 @@ header nav ul {
 }
 
 header nav ul li {
-  padding: 40px;
+  padding: 3vw;
   font-size: 1.9vw;
+  margin-right: 1vw;
 }
 
 /* Header and Footer Styling End */
@@ -204,6 +205,37 @@ header nav ul li {
   padding: 40px 100px;
   font-style: italic;
   text-shadow: 1px 0 1px white
+}
+
+/* Project Styling Start */
+
+.project-head {
+  color: #669DDA;
+  display: flex;
+  justify-content: center;
+  font-size: 6vw;
+  font-style: italic;
+  text-shadow: 3px 0 2px white;
+}
+.work {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 60px 0 60px;
+}
+
+.projectimg {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 6vw;
+}
+
+.link-head, .link-desc {
+  color: #669DDA;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5vw;
+  font-style: italic;
 }
 
 /* Footer Styling Begin */
