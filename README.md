@@ -25,7 +25,7 @@
   * React
   
   ## Screenshot
-  ![Application Screenshot](./src/images/React app.png)
+  ![Application Screenshot](./src/images/React-App.png)
 
   ## Deployed Application
   [Click Here](https://dsiedlarz90.github.io/React-Portfolio/)
