@@ -24,10 +24,10 @@ header {
 }
 
 header h1 {
-  margin: 40px;
+  margin: 2vw;
   color: #669DDA;
   font-family: ravie, sans-serif;
-  font-size: 3.8vw;
+  font-size: 3.5vw;
   text-shadow: 10px 0 5px rgba(0, 0, 0, 0.75);
 }
 
@@ -49,6 +49,7 @@ header nav ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
+  padding: 0;
 }
 
 header nav ul li {
@@ -259,4 +260,13 @@ header nav ul li {
   border-radius: 4px;
   margin-left: .5vh;
   margin-right: .5vh;
+}
+
+/* Footer Styling End */
+
+@media screen and (max-width: 820px) {
+  .header {
+    flex-direction: column
+  }
+
 }
