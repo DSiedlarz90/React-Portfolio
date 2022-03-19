@@ -1,65 +1,97 @@
 import { validateEmail } from '../../utils/helpers';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import '../../../src/App.css';
 
 function Contact() {
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const setErrorMessage = useState('');
+    const setBlurNameMessage = useState('');
+    const setBlurEmailMessage = useState('');
+    const setBlurMessage = useState('');
+  
+    const handleInputChange = (e) => {
+        const { target } = e;
+        const inputType = target.name;
+        const inputValue = target.value;
 
-  const [errorMessage, setErrorMessage] = useState('');
-  const { name, email, message } = formState;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!errorMessage) {
-      console.log('Submit Form', formState);
+        if (inputType === 'name') {
+            setName(inputValue);
+        } else if (inputType === 'email') {
+            setEmail(inputValue);
+        } else {
+            setMessage(inputValue);
+        }
     }
-  };
 
-  const handleChange = (e) => {
-    if (e.target.name === 'email') {
-      const isValid = validateEmail(e.target.value);
-      if (!isValid) {
-        setErrorMessage('Your email is invalid.');
-      } else {
-        setErrorMessage('');
-      }
-    } else {
-      if (!e.target.value.length) {
-        setErrorMessage(`A ${e.target.name} is required.`);
-      } else {
-        setErrorMessage('');
-      }
-    }
-    if (!errorMessage) {
-      setFormState({ ...formState, [e.target.name]: e.target.value });
-      console.log('Handle Form', formState);
-    }
-  };
+    const handleBlurName= (e) => {
+        e.preventDefault();
+        setBlurNameMessage(`A name is required!`)
+        
+    };
 
-  return (
-    <div className="container-form">
-      <p className="contact-head">Contact Me</p>
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="field">
-          <label className="label" htmlFor="name">Name</label>
-          <input className="input" type="text" name="name" placeholder="Full Name" defaultValue={name} onBlur={handleChange} />
+    const handleBlurEmail= (e) => {
+        e.preventDefault();
+        setBlurEmailMessage(`An email is required!`)
+        
+    };
+
+    const handleBlurMessage= (e) => {
+        e.preventDefault();
+        setBlurMessage(`A message is required!`)
+        
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if(!validateEmail(email)) {
+            setErrorMessage('Your email is invalid!');
+            return;
+        };
+        setName('');
+        setEmail('');
+        setMessage('');
+    };
+
+    return (
+  
+        <div className="container-form">
+          <h1 className="contact-head">Contact Me </h1>
+            <form className='contact-form'>
+                <p className="label">Name: </p>
+                <input className="input"
+                value={name}
+                name="name"
+                onChange={handleInputChange}
+                onBlur={handleBlurName}
+                type="name"
+                placeholder="name"/>
+       
+                <p className="label">Email:</p>
+                <input className="input"
+                value={email}
+                name="email"
+                onBlur={handleBlurEmail}
+                onChange={handleInputChange}
+                type="email"
+                placeholder="email"/>
+
+                <p className="label">Your message!</p>
+                <textarea className="textarea"
+                value={message}
+                name="message"
+                onBlur={handleBlurMessage}
+                onChange={handleInputChange}
+                type="message"
+                placeholder="message"/> 
+            <button className="btn" type="button" onClick={handleSubmit}>
+                Submit
+            </button>
+            </form>
         </div>
-        <div className="field">
-          <label className="label" htmlFor="email">Email Address</label>
-          <input className="input" type="email" name="email" placeholder="Email" defaultValue={email} onBlur={handleChange} />
-        </div>
-        <div className="field">
-          <label className="label" htmlFor="message">Message</label>
-          <textarea className="textarea" name="message" rows="5" placeholder="Your message..." defaultValue={message} onBlur={handleChange} />
-        </div>
-        {errorMessage && (
-          <div>
-            <p className="error-text">{errorMessage}</p>
-          </div>
-        )}
-        <button className="btn" data-testid="button" type="submit">Submit</button>
-      </form>
-    </div>
-  );
-}
+    );
+};
 
 export default Contact;
